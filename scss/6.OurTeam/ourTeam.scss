@@ -1,0 +1,102 @@
+.Our_Team{
+    margin-bottom: 100px;
+
+    & h2{
+        @include adaptiv-fon(45, 24);
+        font-family: 'SemiBold';
+        text-align: center;
+        margin: 0 auto; 
+    }
+
+    & .text{
+        @include font('Raleway', 0, #b0bec5);
+        @include adaptiv-fon(16, 14); 
+        text-align: center;
+        width: 810px;
+        margin: 0 auto;
+        line-height: 2;
+        margin: 30px auto 90px auto;
+    }
+}
+
+
+.Our_Team{
+    & .person_content{
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .person_content_image{
+            width: 530px;
+            display:flex;
+            justify-content:space-between;
+            align-items: center;
+
+            & div{
+                background: #ffffff;
+                & img{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 90px;
+                    object-fit: cover;
+                    opacity: 0.2;
+                }
+            }
+
+            & .boxShadow{
+                border-radius: 50%;
+                padding: 20px;
+                -webkit-box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2);
+                -moz-box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2);
+                box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2);
+
+                & .boxShadowInset{
+                    background: none;
+                    border-radius: 50%;
+                    width: 160px;
+                    height: 160px;
+                    -webkit-box-shadow: 0px 0px 20px 8px rgba(0, 0, 0, 1) inset;
+                    -moz-box-shadow: 0px 0px 20px 8px rgba(0, 0, 0, 1) inset;
+                    box-shadow: 0px 0px 20px 8px rgba(0, 0, 0, 1) inset;
+
+                    & .image_active{
+                        width: 160px;
+                        height: 160px;
+                        position: relative;
+                        z-index: -2;
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        & .person_content_comment{
+            width: 640px;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            & h3{
+                @include font('RalewayBold', 0, #000);
+                @include adaptiv-fon(18, 14);
+                margin-bottom: 25px;
+            }
+
+            & p{
+                text-align: center;
+                line-height: 25px;
+                @include font('Raleway', 0, #90a4ae);
+                @include adaptiv-fon(15, 14);
+            }
+        }
+
+        & .person_content_socialNetwork{
+            width: 200px;
+            @include flex-header(flex, space-between, center);
+            margin-top: 35px;
+        }
+    }
+}

@@ -1,0 +1,110 @@
+@import "./../settings/variables.scss";
+@import "./../settings/mixins.scss";
+@import "./../settings/font.scss";
+
+header{
+    height: 750px;
+    background: $backgroundHeader;
+    margin-bottom: 100px;
+    
+    .nav{
+        @include flex-header(flex, space-around, center); 
+        padding-top: 50px;
+        padding-bottom: 165px;
+
+    }
+
+    & img{
+        width: 190px;
+        height: 30px;
+    }
+
+    & .list{
+        width: 500px;
+        @include flex-header(flex, space-between, flex-end); 
+
+        & .list_item{
+            list-style-type: none;
+
+            & .list_item_link{
+                @include font('SemiBold', 1.2540rem,  white); 
+                text-decoration: none;
+
+                &:hover{
+                    text-decoration: underline;
+                    @include hover_button(black, pointer);
+                }
+            }   
+        }
+    }
+
+    & .sing_up{
+        @include font('Raleway', 1.0032rem, white); 
+        border: 1px solid white;
+        padding: 2px 15px;
+        border-radius: 3px;
+
+        &:hover{
+            @include hover_button(black, pointer);
+            border: 1px solid black;  
+        }
+    }
+
+    .header_section{
+        @include flex-header(flex, space-between, false); 
+
+        & .headline{
+            @include adaptiv-block(250, 911);
+            height: 320px;
+            margin-left: 90px;
+
+            & h1{
+                @include adaptiv-fon(57, 24);
+                @include font('RalewayExtraBold', false,  white); 
+                margin-top: 0;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+            }
+
+            & .hedline_text{
+                @include font('Raleway', false,  white); 
+                @include adaptiv-fon(20, 14);
+                font-size: 24px;
+                font-weight: 100;
+                line-height: 2;
+                margin-bottom: 40px;
+            }
+
+            & .btn{
+                @include font('Roboto', false,  #5b6470);
+                @include button_in_section(#ffffff, false, 1px solid white); 
+                text-transform: uppercase;
+                margin-right: 40px;
+                padding: 20px 40px;
+                border-radius: 5px;
+
+                &:hover{
+                    @include button_in_section(#061e37, white, 1px solid #061e37);
+                }
+            }
+        }
+
+        .block_video{
+            width: 600px;
+            height: 320px;
+            margin-right: 147px;
+
+            & video{
+                width: 100%;
+                height: 100%;
+                background:black;
+                border-radius: 6px;
+                mix-blend-mode: unset; 
+
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+}

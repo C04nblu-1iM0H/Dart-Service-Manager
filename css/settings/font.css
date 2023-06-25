@@ -1,0 +1,20 @@
+@font-face {
+  font-family: "SemiBold";
+  src: url("../font/BarlowSemiCondensed-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Raleway";
+  src: url("../font/Raleway/Raleway-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "RalewayExtraBold";
+  src: url("../font/Raleway/Raleway-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Roboto";
+  src: url("../font/Roboto/Roboto-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SemiBold";
+  src: url("../font/Raleway/Raleway-SemiBold.ttf") format("truetype");
+}
