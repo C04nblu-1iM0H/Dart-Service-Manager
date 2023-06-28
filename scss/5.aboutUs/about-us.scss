@@ -98,7 +98,7 @@
             list-style-type: none;
 
             & .slider_item{
-                display: flex;
+                display: none;
 
                 & .slider_avatar{
                     margin-right: 50px;
@@ -129,6 +129,9 @@
                         line-height:25px
                     }
                 }
+            }
+            & .slider_item.active{
+                display: flex;
             }
         }
     }

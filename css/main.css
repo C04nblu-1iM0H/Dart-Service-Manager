@@ -611,9 +611,7 @@ header .header_section .block_video video:focus {
   list-style-type: none;
 }
 .testimonials .sliderUpDown_block .slider_menu .slider_item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
 }
 .testimonials .sliderUpDown_block .slider_menu .slider_item .slider_avatar {
   margin-right: 50px;
@@ -662,6 +660,11 @@ header .header_section .block_video video:focus {
   .testimonials .sliderUpDown_block .slider_menu .slider_item figcaption p {
     font-size: calc(14px + 0 * (100vw / 1600));
   }
+}
+.testimonials .sliderUpDown_block .slider_menu .slider_item.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .Our_Team {
