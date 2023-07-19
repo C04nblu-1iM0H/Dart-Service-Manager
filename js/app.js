@@ -51,13 +51,17 @@ const accordion = document.querySelector('.accordion'),
 
         render(){
             const li = document.createElement('li'),
+                  figure = document.createElement('figure'),
+                  div = document.createElement('div'),
                   img = document.createElement('img'),
                   figcaption = document.createElement('figcaption'),
                   h3  = document.createElement('h3'),
                   p = document.createElement('p');
 
             li.classList.add("slider_item");
+            div.classList.add("box__slider_avatar");
             img.classList.add("slider_avatar");
+            figcaption.classList.add("figcap");
             img.getAttribute("src");
             img.getAttribute("alt");
             img.setAttribute("src", this.src);
@@ -66,12 +70,15 @@ const accordion = document.querySelector('.accordion'),
             h3.textContent = this.titel;
             p.textContent = this.description;
 
-            let messiv = [img, figcaption, [h3, p]];
+            let messBlockFirst = [ div,[img]];
+            let messBlockSecond = [figcaption, [h3, p]];
 
-            const addElementsPage = (mess) =>{
-                mess.map(i => (Array.isArray(i))? figcaption.append(...i) : li.append(i));
+            const addElementsPage = (mess, block) =>{
+                mess.map(i => (Array.isArray(i))? block.append(...i) : figure.append(i));
             }
-            addElementsPage(messiv);
+            addElementsPage(messBlockFirst, div);
+            addElementsPage(messBlockSecond, figcaption);
+            li.append(figure)
             this.parent.append(li);
 
         }
@@ -243,4 +250,25 @@ setInterval(() => {
     },9500);
     showTabContent(i);
     i++; 
-  }, 10000)
+}, 10000);
+
+const hamburgerBtn = document.querySelector('.btnHamburger'),
+      menu = document.querySelector('.box');
+
+    function hidenHumburher(){
+        menu.classList.add('disactive');
+        menu.classList.remove('active');
+        document.body.classList.remove('scroll');
+    }
+
+    function showHumburher(){
+        menu.classList.add('active');
+        menu.classList.remove('disactive');
+        document.body.classList.add('scroll');
+    }
+    console.log(document.body)
+hamburgerBtn.addEventListener('click', (e) =>{
+    const target = e.target;
+    hamburgerBtn.classList.toggle('open');
+    (target && target.classList.contains('open') || target.offsetParent.classList.contains('open')) ? showHumburher() : hidenHumburher();
+});

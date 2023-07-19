@@ -2,6 +2,8 @@
 <html>
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
     <title>Dart service Manager</title>
@@ -17,6 +19,21 @@
             <li class="list_item"><a href="#" class="list_item_link">Pricing</a></li>
             <li class="list_item"><a href="#" class="list_item_link">Help</a></li>
         </ul>
+        <div class="hamburger-menu">
+            <div class="btnHamburger">
+                <div class="icon"></div>
+            </div>
+            <div class="box">
+                <img src="img/logo_mob.png">
+                <ul class="menu__box">
+                    <li><a class="menu__item" href="#">Home</a></li>
+                    <li><a class="menu__item" href="#">Service</a></li>
+                    <li><a class="menu__item" href="#">Extension</a></li>
+                    <li><a class="menu__item" href="#">Pricing</a></li>
+                    <li><a class="menu__item" href="#">Help</a></li>
+                </ul>
+            </div>
+        </div>
         <a class="sing_up">sing up</a>
     </nav>
     <section class="header_section">
@@ -25,12 +42,28 @@
             <p class="hedline_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br>
                 eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad<br>
                 minim veniam, quis nostrud exercitation ullamc</p>
-            <a class="btn">Buy now</a>
-            <a class="btn">try for free</a>
+            <div class="box_buttons">
+                <a class="btn">Buy now</a>
+                <a class="btn">try for free</a>
+            </div>
         </article>
         <article class="block_video">
             <video controls src="img/video.mp4" poster="img/video.png"></video>
         </article>
+    </section>
+    <section class="header_section_laptop">
+        <article class="headline">
+            <h1>lorem Ipsum<br>Dolor sit amet</h1>
+            <p class="hedline_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do<br>
+                eiusmod tempor incididunt labore et dolore magna aliqua. Ut enim ad<br>
+                minim veniam, quis nostrud exercitation ullamc</p>
+            <video controls src="img/video.mp4" poster="img/video.png"></video>
+            <div class="box_buttons">
+                <a class="btn">Buy now</a>
+                <a class="btn">try for free</a>
+            </div>
+        </article>
+
     </section>
 </header>
 <section class="block_Easy">
@@ -196,22 +229,28 @@
                     <div class="conteiner">
                         <ul class="slider_menu">
                             <li class="slider_item active">
-                                <img class="slider_avatar" src="img/Feedback/Ellipse1.png" alt="avatar">
-                                <figcaption>
-                                    <h3>John Doe</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
-                                </figcaption>
+                                <figure>
+                                    <div class="box__slider_avatar">
+                                        <img class="slider_avatar" src="img/Feedback/Ellipse1.png" alt="avatar">
+                                    </div>
+                                    <figcaption class="figcap">
+                                        <h3>John Doe</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
+                                    </figcaption>
+                                </figure>
                             </li>
                             <li class="slider_item active">
-                                <img class="slider_avatar" src="img/Feedback/Ellipse2.png" alt="avatar">
-                                <figcaption>
-                                    <h3>Khalessia</h3>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
-                                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
-                                </figcaption>
+                                <figure>
+                                    <img class="slider_avatar" src="img/Feedback/Ellipse2.png" alt="avatar">
+                                    <figcaption class="figcap">
+                                        <h3>John Doe</h3>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+                                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
+                                    </figcaption>
+                                </figure>
                             </li>
                         </ul>
                     </div>

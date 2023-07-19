@@ -7,10 +7,14 @@ header{
     background: $backgroundHeader;
     margin-bottom: 100px;
     
-    .nav{
+    & .nav{
         @include flex-header(flex, space-around, center); 
         padding-top: 50px;
         padding-bottom: 165px;
+
+        & .hamburger-menu{
+            display: none;
+        }
 
     }
 
@@ -43,6 +47,7 @@ header{
         border: 1px solid white;
         padding: 2px 15px;
         border-radius: 3px;
+        margin-right: 10px;
 
         &:hover{
             @include hover_button(black, pointer);
@@ -55,11 +60,11 @@ header{
 
         & .headline{
             @include adaptiv-block(250, 911);
-            height: 320px;
-            margin-left: 90px;
+            height: 350px;
+            margin-left: 9%;
 
             & h1{
-                @include adaptiv-fon(57, 24);
+                @include adaptiv-fon(48, 21);
                 @include font('RalewayExtraBold', false,  white); 
                 margin-top: 0;
                 margin-bottom: 20px;
@@ -68,31 +73,33 @@ header{
 
             & .hedline_text{
                 @include font('Raleway', false,  white); 
-                @include adaptiv-fon(20, 14);
+                @include adaptiv-fon(16, 14);
                 font-size: 24px;
                 font-weight: 100;
                 line-height: 2;
                 margin-bottom: 40px;
             }
-
-            & .btn{
-                @include font('Roboto', false,  #5b6470);
-                @include button_in_section(#ffffff, false, 1px solid white); 
-                text-transform: uppercase;
-                margin-right: 40px;
-                padding: 20px 40px;
-                border-radius: 5px;
-
-                &:hover{
-                    @include button_in_section(#061e37, white, 1px solid #061e37);
+            & .box_buttons{
+                margin-top: 69px;
+                & .btn{
+                    @include font('Roboto', false,  #5b6470);
+                    @include button_in_section(#ffffff, false, 1px solid white); 
+                    text-transform: uppercase;
+                    margin-right: 40px;
+                    padding: 20px 40px;
+                    border-radius: 5px;
+    
+                    &:hover{
+                        @include button_in_section(#061e37, white, 1px solid #061e37);
+                    }
                 }
             }
         }
 
         .block_video{
-            width: 600px;
-            height: 320px;
-            margin-right: 147px;
+            width: 40%;
+            height: 40%;
+            margin-right: 8%;
 
             & video{
                 width: 100%;
@@ -107,4 +114,182 @@ header{
             }
         }
     }
+    & .header_section_laptop{
+        display: none;
+    }
+}
+
+@media (max-width:1199px){
+    header{
+        height: 900px;
+        & .nav{
+            padding-bottom: 60px;
+        }
+        & .header_section{
+            display: none;
+        }
+        & .header_section_laptop{
+            display: block;
+            & .headline{
+                height: 100%;
+                margin-left: 90px;
+    
+                & h1{
+                    @include adaptiv-fon(57, 21);
+                    @include font('RalewayExtraBold', false,  white); 
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                    text-transform: uppercase;
+                }
+    
+                & .hedline_text{
+                    @include font('Raleway', false,  white); 
+                    @include adaptiv-fon(20, 14);
+                    font-size: 24px;
+                    font-weight: 100;
+                    line-height: 2;
+                    margin-bottom: 40px;
+                }
+
+                & video{
+                    width: 55%;
+                }
+
+                & .box_buttons{
+                    margin-top: 30px;
+                    width: 55%;
+                    @include flex-header(flex, space-between, false); 
+                    & .btn{
+                        @include font('Roboto', false,  #5b6470);
+                        @include button_in_section(#ffffff, false, 1px solid white); 
+                        text-transform: uppercase;
+                        padding: 20px 40px;
+                        border-radius: 5px;
+        
+                        &:hover{
+                            @include button_in_section(#061e37, white, 1px solid #061e37);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:991px){
+    header{
+        height: 900px;
+        & .header_section_laptop{
+            & .headline{
+                & video{
+                    width: 75%;
+                }
+                & .box_buttons{
+                    margin-top: 30px;
+                    width: 75%;
+                }
+            }
+        }
+        & .nav{
+            & .list{
+                display: none;
+            }
+
+            & .hamburger-menu{
+                display: block;
+                .btnHamburger{
+                    @include btn(40px, 33px);
+                    z-index: 2;
+                    .icon {
+                        @include icon(4px, 30px);
+                        &:before{
+                            @include icon-before(4px, 30px, -10px);
+                        }
+                        &:after{
+                            @include icon-after(4px, 30px, 10px);
+                        }
+                    }
+                    
+                    &.open {
+                      .icon {
+                        transition-duration: 0.5s;
+                        background: transparent;
+                        &:before{
+                            transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+                        }
+                        &:after{
+                            transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+                        }
+                      }
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                 
+                & .box {
+                    z-index: 1;
+                    position: absolute;
+                    left:-100%;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: #ffffff;
+
+                    & img{
+                        margin-top: 50px;
+                        margin-left: 50px;
+                        width: 190px;
+                        height: 30px;
+                    }
+
+                    & .menu__box{
+                        height: 350px;
+                        margin-top: 30px;
+                        list-style-type:none;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        & .menu__item {
+                            @include font('SemiBold', 1.2540rem,  black); 
+                            text-decoration: none;
+            
+                            &:hover{
+                                text-decoration: underline;
+                                @include hover_button(black, pointer);
+                            }
+                        }
+                    }
+                }
+
+                & .disactive {
+                    transition: left 0.4s;
+                    animation: hidenHamburger 0.5s ease forwards;
+                }
+                & .active{
+                    animation: showHamburger 0.5s ease forwards;
+                    transition: left 0.4s;
+                }
+
+                @keyframes hidenHamburger {
+                    from{
+                        left:0;
+                    }to{
+                        left:-100%;
+                    }
+                }
+                @keyframes showHamburger {
+                    from{
+                        left:-100%;
+                    }to{
+                        left:0;
+                    }
+                }
+            }
+        }
+    }
+}
+.scroll{
+    overflow-y: hidden;
 }

@@ -156,7 +156,7 @@
             @keyframes descriptionStart {
                 from{
                     opacity: 0;
-                    transform: translateX(200px);
+                    transform: translateX(100px);
                 }to{
                     opacity: 1;
                     transform: translateX(0px);
@@ -173,7 +173,7 @@
                     transform: translateX(0px);
                 }to{
                     opacity: 0;
-                    transform: translateX(-200px);
+                    transform: translateX(-100px);
                 }
             }
         }
@@ -189,6 +189,35 @@
             width: 200px;
             @include flex-header(flex, space-between, center);
             margin-top: 35px;
+        }
+    }
+}
+
+@media (max-width:991px){
+    .Our_Team{  
+        & .text{
+            width: 100%;
+        }
+
+        & .person_content_comment{
+            @keyframes descriptionStart {
+                from{
+                    opacity: 0;
+                    transform: translateX(60px);
+                }to{
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+            @keyframes descriptionEnd {
+                from{
+                    opacity: 1;
+                    transform: translateX(0px);
+                }to{
+                    opacity: 0;
+                    transform: translateX(-60px);
+                }
+            }
         }
     }
 }

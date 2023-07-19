@@ -122,4 +122,25 @@
     }
 }
 
+@media (max-width:1199px){
+    .services{
+        & .menu_accrodion{
+            & .accordion__item{
+                width: 70%;
+            }
+        }
+    }
+}
 
+@media (max-width:991px){
+    .services{  
+        & .text{
+            width: 100%;
+        }
+        & .menu_accrodion{
+            & .accordion__item{
+                width: 90%;
+            }
+        }
+    }
+}

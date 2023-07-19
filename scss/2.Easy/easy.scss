@@ -73,3 +73,17 @@
         }
     }
 }
+
+@media (max-width:991px){
+    .block_Easy{  
+        & h3{
+            width: 100%;
+            margin: 20px 0;
+            text-align: center;
+        }
+    
+        & .text{
+            width: 100%;
+        }
+    }
+}

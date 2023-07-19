@@ -96,3 +96,11 @@
         }
     }
 }
+
+@media (max-width:991px){
+    .contact{  
+        & .text{
+            width: 100%;
+        }
+    }
+}
