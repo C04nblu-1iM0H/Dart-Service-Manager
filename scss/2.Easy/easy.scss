@@ -87,3 +87,42 @@
         }
     }
 }
+
+@media (max-width:767px){
+    .block_Easy{
+        & .text{
+            @include font('Raleway', 0, #b0bec5);
+            @include adaptiv-fon(20, 14); 
+            width: 70vw;
+            margin: 0 auto;
+        }
+        & .easy_list{
+            height: 800px;
+            @include flex-header(flex, space-evenly, center); 
+            flex-direction: column;
+            margin-bottom: 35px;
+            & .easy_item{
+                & .easy_img{
+                    margin-bottom: 10px;
+                } 
+                & .easy_titel{
+                    margin-bottom: 10px;
+                }
+                & .easy_text{
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:575px){
+    .block_Easy{
+        & .text{
+            margin-bottom: 30px;
+        }
+        & .easy_list{
+            height: 650px;
+        }
+    }
+}

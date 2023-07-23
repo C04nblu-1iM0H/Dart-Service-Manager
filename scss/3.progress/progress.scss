@@ -42,3 +42,33 @@
 
     }
 }
+
+@media (max-width:767px){
+    .site_activity{
+        width: 100vw;
+        margin-bottom: 50px;
+    
+        & ul{
+            display: flex;
+            flex-wrap: wrap;
+    
+            & .item_list{
+                width: 50vw;
+                height: 150px;
+                display: flex;
+                align-items: center;
+                justify-content:center;
+            }
+        }
+    }
+}
+
+@media (max-width:575px){
+    .site_activity{
+        & ul{
+            & .item_list{
+                width: 100vw;
+            }
+        }
+    }
+}

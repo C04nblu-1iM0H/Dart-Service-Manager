@@ -24,6 +24,7 @@ const accordion = document.querySelector('.accordion'),
 
     accordion.addEventListener('click', (ev) => {
         const target = ev.target;
+        console.dir(target);
         if(target && target.classList.contains('accordion__header')){
             accordionItem.forEach((item, i)=>{
                 if(target.parentNode === item ){
@@ -56,28 +57,42 @@ const accordion = document.querySelector('.accordion'),
                   img = document.createElement('img'),
                   figcaption = document.createElement('figcaption'),
                   h3  = document.createElement('h3'),
+                  div_mob  = document.createElement('div'),
+                  img_mob = document.createElement('img'),
+                  h3_mob  = document.createElement('h3'),
                   p = document.createElement('p');
 
             li.classList.add("slider_item");
             div.classList.add("box__slider_avatar");
             img.classList.add("slider_avatar");
             figcaption.classList.add("figcap");
+            h3.classList.add("name_person");
+            div_mob.classList.add("mob_person")
             img.getAttribute("src");
             img.getAttribute("alt");
             img.setAttribute("src", this.src);
             img.setAttribute("alt", this.alt);
+            img_mob.getAttribute("src");
+            img_mob.getAttribute("alt");
+            img_mob.setAttribute("src", this.src);
+            img_mob.setAttribute("alt", this.alt);
+            
 
             h3.textContent = this.titel;
+            h3_mob.textContent = this.titel;
             p.textContent = this.description;
 
             let messBlockFirst = [ div,[img]];
             let messBlockSecond = [figcaption, [h3, p]];
+            let messBlockThird = [div_mob,[img_mob, h3_mob]]
 
-            const addElementsPage = (mess, block) =>{
-                mess.map(i => (Array.isArray(i))? block.append(...i) : figure.append(i));
-            }
+            const addElementsPage = (mess, block) =>{mess.map(i => (Array.isArray(i))? block.append(...i) : figure.append(i));}
+            const addElementsFigcaption = (mess,block) =>{mess.map(i => (Array.isArray(i))? block.append(...i) : figcaption.prepend(i));}
+            
             addElementsPage(messBlockFirst, div);
             addElementsPage(messBlockSecond, figcaption);
+            addElementsFigcaption(messBlockThird, div_mob);
+            
             li.append(figure)
             this.parent.append(li);
 
@@ -266,9 +281,33 @@ const hamburgerBtn = document.querySelector('.btnHamburger'),
         menu.classList.remove('disactive');
         document.body.classList.add('scroll');
     }
-    console.log(document.body)
+
 hamburgerBtn.addEventListener('click', (e) =>{
     const target = e.target;
     hamburgerBtn.classList.toggle('open');
     (target && target.classList.contains('open') || target.offsetParent.classList.contains('open')) ? showHumburher() : hidenHumburher();
+});
+
+
+const signUp = document.querySelector('.sing_up__item');
+
+function addClass(){
+    signUp.classList.add('btnAppear_active');
+}
+
+function removeClass(){
+    signUp.classList.remove('btnAppear_active');
+    setTimeout(() => {
+        signUp.classList.add('btnAppear_active');
+    }, 0)
+}
+
+signUp.addEventListener('click', (e) =>{
+    const target =e.target;
+    console.dir(target);
+    if(target.classList.contains('sing_up__item') && !target.classList.contains('btnAppear_active')){
+        addClass();
+    }else{
+        removeClass(); 
+    }
 });
