@@ -1,0 +1,280 @@
+.services{
+    margin-bottom: 100px;
+
+    & h2{
+        @include adaptiv-fon(60, 24);
+        font-family: 'SemiBold';
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    & .text{
+        @include font('Raleway', 0, #b0bec5);
+        @include adaptiv-fon(20, 14); 
+        text-align: center;
+        width: 810px;
+        margin: 0 auto;
+        line-height: 2;
+        margin: 30px auto 90px auto;
+    }
+}
+
+/*Аккордеон*/
+
+.services{
+    & .menu_accrodion{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        padding: 0;
+
+        & .accordion__item{
+            width: 900px;
+            margin-bottom: 15px;
+            -webkit-box-shadow: 0px 3px 8px 2px rgba(34, 60, 80, 0.2);
+            -moz-box-shadow: 0px 3px 8px 2px rgba(34, 60, 80, 0.2);
+            box-shadow: 0px 3px 8px 2px rgba(34, 60, 80, 0.2);
+            
+
+            & .accordion__header{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                height: 50px;
+                border-radius: 5px;
+                z-index: -8;
+
+                & .accordion__title{
+                    position: relative;
+                    z-index: -1;
+                    display: flex;
+                    align-items: center;
+
+                    & img{
+                        margin: 0 25px;
+                        width: 100%;
+                        height: 100%;
+                    }
+    
+                    & .heading{
+                        font-family: 'RalewayBold';
+                    }
+                }
+
+                & .accordion__header__item{
+                    margin-right: 25px;
+                    position: relative;
+                    z-index: -1;
+
+                    & .rotateImg{
+                        transform: rotate(180deg);
+                    }
+                }
+
+            }
+
+            & .accordion__body{
+                position: relative;
+                z-index: -1;
+                & .accordion__content{
+                    display: flex;
+
+                    & figure{
+                        margin: 0 25px 25px 25px;
+                    }
+
+                    & figcaption{
+                        font-family: 'Raleway';
+                        font-size: 12pt;
+                        margin-right: 10px;
+                    }
+                }
+            }
+
+            & .show{
+                animation: showBlock 0.5s ease forwards;
+            }
+
+            @keyframes showBlock {
+                from{
+                    height: 0;
+                }to{
+                    height: 184px;
+                }
+            }
+
+            & .hide{
+                animation: showBlockIn 0.5s ease forwards ;
+            }
+            @keyframes showBlockIn {
+                from{
+                    height: 184px;
+                }to{
+                    height: 0;
+                }
+            }
+            & .showContent{
+                animation: showContent ease 2s forwards;
+            }
+            @keyframes showContent {
+                from{
+                    opacity: 0;
+                }to{
+                    opacity: 1;
+                }
+            }
+
+            & .hideContent{
+                opacity: 0;
+            }
+        }
+
+    }
+}
+
+@media (max-width:1199px){
+    .services{
+        & .menu_accrodion{
+            & .accordion__item{
+                width: 70%;
+            }
+        }
+    }
+}
+
+@media (max-width:991px){
+    .services{  
+        & .text{
+            width: 100%;
+        }
+        & .menu_accrodion{
+            & .accordion__item{
+                width: 90%;
+            }
+        }
+    }
+}
+
+
+@media (max-width:767px){
+    .services{  
+        margin-bottom: 50px;
+        & .text{
+            text-align: center;
+            width: 70vw;
+            margin: 30px auto 30px auto;
+        }
+
+        @keyframes showBlock {
+            from{
+                height: 0;
+            }to{
+                height: 280px;
+            }
+        }
+
+        @keyframes showBlockIn {
+            from{
+                height: 280px;
+            }to{
+                height: 0;
+            }
+        }
+    }
+}
+
+
+@media (max-width:575px){
+    .services{
+        & .text{
+            text-align: center;
+            width: 70vw;
+            margin: 15px auto 30px auto;
+        }
+        & .menu_accrodion{    
+            & .accordion__item{
+                width: 95vw;               
+                & .accordion__header{
+                    & .accordion__title{
+                        display: flex;
+                        font-size: 12px;
+                        & img{
+                            margin: 0 10px;
+                        }
+        
+                        & .heading{
+                            font-weight: 600;
+                        }
+                    }
+    
+                    & .accordion__header__item{
+                        margin-right: 10px;
+    
+                        & .rotateImg{
+                            transform: rotate(180deg);
+                        }
+                    }
+    
+                }
+    
+                & .accordion__body{
+                    & .accordion__content{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+
+                        & figure{
+                            margin: 0;
+                        }
+                        & figcaption{
+                            margin-top: 15px;
+                            width: 80vw;
+                        }
+                    }
+                }
+                & .show{
+                    animation: showBlock 0.5s ease forwards;
+                }
+    
+                @keyframes showBlock {
+                    from{
+                        height: 0;
+                    }to{
+                        height: 380px;
+                    }
+                }
+    
+                & .hide{
+                    animation: showBlockIn 0.5s ease forwards ;
+                }
+                @keyframes showBlockIn {
+                    from{
+                        height: 380px;
+                    }to{
+                        height: 0;
+                    }
+                }
+                & .showContent{
+                    animation: showContent ease 2s forwards;
+                }
+                @keyframes showContent {
+                    from{
+                        opacity: 0;
+                    }to{
+                        opacity: 1;
+                    }
+                }
+    
+                & .hideContent{
+                    opacity: 0;
+                }
+            }
+    
+        }
+    }
+}

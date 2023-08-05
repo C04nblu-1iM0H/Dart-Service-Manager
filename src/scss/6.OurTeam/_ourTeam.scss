@@ -1,0 +1,421 @@
+.Our_Team{
+    margin-bottom: 100px;
+
+    & h2{
+        @include adaptiv-fon(45, 24);
+        font-family: 'SemiBold';
+        text-align: center;
+        margin: 0 auto; 
+    }
+
+    & .text{
+        @include font('Raleway', 0, #b0bec5);
+        @include adaptiv-fon(16, 14); 
+        text-align: center;
+        width: 810px;
+        margin: 0 auto;
+        line-height: 2;
+        margin: 30px auto 90px auto;
+    }
+}
+
+
+.Our_Team{
+    & .person_content{
+        width: 100%;
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+
+        & .person_content_image{
+            width: 730px;
+            display:flex;
+            justify-content:space-between;
+            align-items: center;
+
+            & div{
+                background: #ffffff;
+                & img{
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 90px;
+                    object-fit: cover;
+                    opacity: 0.2;
+                }
+            }
+
+            & .boxShadow{
+                border-radius: 50%;
+                padding: 20px;
+                -webkit-box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2);
+                -moz-box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2);
+                box-shadow: 0px 0px 15px 2px rgba(34, 60, 80, 0.2);
+            
+                & .boxShadowInset{
+                    background: none;
+                    border-radius: 50%;
+                    width: 160px;
+                    height: 160px;
+                    -webkit-box-shadow: 0px 0px 20px 8px rgba(0, 0, 0, 1) inset;
+                    -moz-box-shadow: 0px 0px 20px 8px rgba(0, 0, 0, 1) inset;
+                    box-shadow: 0px 0px 20px 8px rgba(0, 0, 0, 1) inset;
+
+                    & .image_active{
+                        width: 160px;
+                        height: 160px;
+                        position: relative;
+                        z-index: -2;
+                        opacity: 1;
+                    }
+                }
+            }
+            & .fadeIn{
+                animation: fadeStart 1 ease 1s forwards;
+                transition: transform 1s;
+            }
+
+            @keyframes fadeStart {
+                from{
+                    opacity: 0;
+                    transform: translateY(-50px);
+                }to{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            & .fadeOut{
+                animation: fadeEnd 1 ease 1s forwards;
+                transition: transform 1s;
+            }
+
+            @keyframes fadeEnd {
+                from{
+                    opacity: 1;
+                    transform: translateY(0px);
+                }50%{
+                    opacity: 0;
+                    transform: translateY(-50px);
+                }to{
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+
+        & .person_content_comment{
+            width: 640px;
+            margin-top: 40px;
+            text-align: center;
+
+            & h3{
+                @include font('RalewayBold', 0, #000);
+                @include adaptiv-fon(18, 14);
+                margin-bottom: 25px;
+            }
+            & .titel_show{
+                animation: titelStart 1 ease 1s forwards;
+                transition: transform 0.4s;
+            }
+
+            @keyframes titelStart {
+                from{
+                    opacity: 0;
+                    transform: translateX(-200px);
+                }to{
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+
+            & .titel_hide{
+                animation: titelEnd 1 ease 1s forwards;
+                transition: transform 0.4s;
+            }
+            @keyframes titelEnd {
+                from{
+                    opacity: 1;
+                    transform: translateX(0px);
+                }to{
+                    opacity: 0;
+                    transform: translateX(200px);
+                }
+            }
+
+            & p{
+                text-align: center;
+                line-height: 25px;
+                @include font('Raleway', 0, #90a4ae);
+                @include adaptiv-fon(15, 14);
+            }
+            & .description_show{
+                animation: descriptionStart 1 ease 1s forwards;
+                transition: transform 0.4s;
+            }
+
+            @keyframes descriptionStart {
+                from{
+                    opacity: 0;
+                    transform: translateX(100px);
+                }to{
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+
+            & .description_hide{
+                animation: descriptionEnd 1 ease 1s forwards;
+                transition: transform 0.4s;
+            }
+            @keyframes descriptionEnd {
+                from{
+                    opacity: 1;
+                    transform: translateX(0px);
+                }to{
+                    opacity: 0;
+                    transform: translateX(-100px);
+                }
+            }
+        }
+        & .person_show{
+            display: block;
+        }
+        
+        & .person_hide{
+            display: none;
+        }
+
+        & .person_content_socialNetwork{
+            width: 200px;
+            @include flex-header(flex, space-between, center);
+            margin-top: 35px;
+        }
+    }
+}
+
+@media (max-width:991px){
+    .Our_Team{  
+        & .text{
+            width: 80vw;
+        }
+
+        & .person_content_comment{
+            @keyframes descriptionStart {
+                from{
+                    opacity: 0;
+                    transform: translateX(60px);
+                }to{
+                    opacity: 1;
+                    transform: translateX(0px);
+                }
+            }
+            @keyframes descriptionEnd {
+                from{
+                    opacity: 1;
+                    transform: translateX(0px);
+                }to{
+                    opacity: 0;
+                    transform: translateX(-60px);
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:767px){
+    .Our_Team{  
+        margin-bottom: 70px;
+        & .text{
+            @include adaptiv-fon(16, 14); 
+            line-height: 1.5;
+            width: 70vw;
+            margin: 20px auto 40px auto;
+        } 
+        & .person_content{
+            width: 100%;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+    
+            & .person_content_image{
+                width: 100vw;
+                height: 470px;
+                display:flex;
+                flex-direction: column;
+                justify-content:space-evenly;
+                align-items: center; 
+                @keyframes fadeStart {
+                    from{
+                        opacity: 0;
+                        transform: translateX(-50px);
+                    }to{
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                @keyframes fadeEnd {
+                    from{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }50%{
+                        opacity: 0;
+                        transform: translateX(-50px);
+                    }to{
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+            }
+    
+            & .person_content_comment{
+                width: 80vw;
+
+                @keyframes titelStart {
+                    from{
+                        opacity: 0;
+                        transform: translateX(-100px);
+                    }to{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }
+                }
+                @keyframes titelEnd {
+                    from{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }to{
+                        opacity: 0;
+                        transform: translateX(100px);
+                    }
+                }
+    
+                & p{
+                    @include adaptiv-fon(16, 14);
+                }
+    
+                @keyframes descriptionStart {
+                    from{
+                        opacity: 0;
+                        transform: translateX(50px);
+                    }to{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }
+                }
+    
+                & .description_hide{
+                    animation: descriptionEnd 1 ease 1s forwards;
+                    transition: transform 0.4s;
+                }
+                @keyframes descriptionEnd {
+                    from{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }to{
+                        opacity: 0;
+                        transform: translateX(-50px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:575px){
+    .Our_Team{  
+        margin-bottom: 80px;
+        & .person_content{ 
+            & .person_content_image{
+                & .person_box_image{
+                    & .person_image{
+                        & img{
+                            width: 84px;
+                            height: 84px;
+                        }
+                    }
+                }
+                & .boxShadow{
+                    padding: 15px;
+                
+                    & .boxShadowInset{
+                        width: 120px;
+                        height: 120px;
+                        -webkit-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 1) inset;
+                        -moz-box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 1) inset;
+                        box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 1) inset;
+    
+                        & .image_active{
+                            width: 120px;
+                            height: 120px;
+                        }
+                    }
+                }
+
+                @keyframes fadeStart {
+                    from{
+                        opacity: 0;
+                        transform: translateX(-50px);
+                    }to{
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+                @keyframes fadeEnd {
+                    from{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }50%{
+                        opacity: 0;
+                        transform: translateX(-50px);
+                    }to{
+                        opacity: 1;
+                        transform: translateX(0);
+                    }
+                }
+            }
+    
+            & .person_content_comment{
+                width: 80vw;
+                margin-top: 0;
+
+                @keyframes titelStart {
+                    from{
+                        opacity: 0;
+                        transform: translateX(-50px);
+                    }to{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }
+                }
+                @keyframes titelEnd {
+                    from{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }to{
+                        opacity: 0;
+                        transform: translateX(50px);
+                    }
+                }
+    
+                @keyframes descriptionStart {
+                    from{
+                        opacity: 0;
+                        transform: translateX(30px);
+                    }to{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }
+                }
+                @keyframes descriptionEnd {
+                    from{
+                        opacity: 1;
+                        transform: translateX(0px);
+                    }to{
+                        opacity: 0;
+                        transform: translateX(-30px);
+                    }
+                }
+            }
+        }
+    }
+}

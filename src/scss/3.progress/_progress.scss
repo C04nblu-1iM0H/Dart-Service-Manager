@@ -1,0 +1,76 @@
+.site_activity{
+    width: 100%;
+    margin-bottom: 100px;
+
+    & ul{
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+
+        & .item_list{
+            width: 40%;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content:center;
+
+            & figure{
+                padding: 15px;
+                background: #fff;
+                border-radius: 90px;
+                margin-right: 20px;
+            }
+
+            & figcaption{
+                width: 100px;
+                color: #fff;
+                font-family: 'RalewayBold';
+            }
+        }
+
+        & .list_color:nth-child(1){
+            background-color: #80d8ff;
+        }
+        & .list_color:nth-child(2){
+            background-color: #82b1ff;
+        }
+        & .list_color:nth-child(3){
+            background-color: #b388ff;
+        }
+        & .list_color:nth-child(4){
+            background-color: #ea80fc;
+        }
+
+    }
+}
+
+
+@media (max-width:991px){
+    .site_activity{
+        width: 100vw;
+        margin-bottom: 50px;
+    
+        & ul{
+            display: flex;
+            flex-wrap: wrap;
+    
+            & .item_list{
+                width: 50vw;
+                height: 150px;
+                display: flex;
+                align-items: center;
+                justify-content:center;
+            }
+        }
+    }
+}
+
+@media (max-width:575px){
+    .site_activity{
+        & ul{
+            & .item_list{
+                width: 100vw;
+            }
+        }
+    }
+}

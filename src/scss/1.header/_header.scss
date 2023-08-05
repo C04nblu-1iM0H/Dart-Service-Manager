@@ -1,0 +1,454 @@
+header{
+    position: relative;
+    height: 750px;
+    margin-bottom: 100px;
+    &::after{
+        content: "";
+        display: block;    
+        width: 100%;
+        height: 100%;    
+        position: absolute;
+        top: 0;      
+        left: 0;   
+        background: transparent;
+        background-image: linear-gradient(300deg, rgba(255,255,255,1) 0%, rgba(25,229,194,1) 0%, rgba(33,33,33,1) 0%, rgba(171,171,171,1) 0%, rgba(185,185,185,1) 0%, rgba(0,0,0,1) 0%, rgba(24,227,194,1) 0%, rgba(9,176,193,1) 100%);
+        opacity: 0.95;
+        z-index: -1;
+    }
+    
+    & .header-bg{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -2;
+        object-fit: cover;
+    }
+    
+    & .nav{
+        @include flex-header(flex, space-around, center); 
+        padding-top: 50px;
+        padding-bottom: 165px;
+
+        & .hamburger-menu{
+            display: none;
+        }
+
+    }
+
+    & .logo{
+        width: 190px;
+        height: 30px;
+    }
+
+    & .list{
+        width: 500px;
+        @include flex-header(flex, space-between, flex-end); 
+
+        & .list_item{
+            list-style-type: none;
+
+            & .list_item_link{
+                @include font('SemiBold', 1.2540rem,  white); 
+                text-decoration: none;
+
+                &:hover{
+                    text-decoration: underline;
+                    @include hover_button(black, pointer);
+                }
+            }   
+        }
+    }
+
+    & .sing_up{
+        @include font('Raleway', 1.0032rem, white); 
+        border: 1px solid white;
+        padding: 2px 15px;
+        border-radius: 3px;
+        margin-right: 10px;
+
+        &:hover{
+            @include hover_button(black, pointer);
+            border: 1px solid black;  
+        }
+    }
+
+    .header_section{
+        @include flex-header(flex, space-between, false); 
+
+        & .headline{
+            @include adaptiv-block(250, 911);
+            height: 350px;
+            margin-left: 9%;
+
+            & h1{
+                @include adaptiv-fon(48, 21);
+                @include font('RalewayExtraBold', false,  white); 
+                margin-top: 0;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+            }
+
+            & .hedline_text{
+                @include font('Raleway', false,  white); 
+                @include adaptiv-fon(16, 14);
+                font-size: 24px;
+                font-weight: 100;
+                line-height: 2;
+                margin-bottom: 40px;
+            }
+            & .box_buttons{
+                margin-top: 69px;
+                & .btn{
+                    @include font('Roboto', false,  #5b6470);
+                    @include button_in_section(#ffffff, false, 1px solid white); 
+                    text-transform: uppercase;
+                    margin-right: 40px;
+                    padding: 20px 40px;
+                    border-radius: 5px;
+    
+                    &:hover{
+                        @include button_in_section(#061e37, white, 1px solid #061e37);
+                    }
+                }
+            }
+        }
+
+        .block_video{
+            width: 40%;
+            height: 40%;
+            margin-right: 8%;
+
+            & video{
+                width: 100%;
+                height: 100%;
+                background:black;
+                border-radius: 6px;
+                mix-blend-mode: unset; 
+
+                &:focus{
+                    outline: none;
+                }
+            }
+        }
+    }
+    & .header_section_laptop{
+        display: none;
+    }
+}
+
+@media (max-width:1199px){
+    header{
+        height: 900px;
+        & .nav{
+            padding-bottom: 60px;
+        }
+        & .header_section{
+            display: none;
+        }
+        & .header_section_laptop{
+            display: block;
+            & .headline{
+                height: 100%;
+                margin-left: 90px;
+    
+                & h1{
+                    @include adaptiv-fon(57, 26);
+                    @include font('RalewayExtraBold', false,  white); 
+                    margin-top: 0;
+                    margin-bottom: 20px;
+                    text-transform: uppercase;
+                }
+    
+                & .hedline_text{
+                    @include font('Raleway', false,  white); 
+                    @include adaptiv-fon(20, 14);
+                    font-size: 24px;
+                    font-weight: 100;
+                    line-height: 2;
+                    margin-bottom: 40px;
+                }
+
+                & video{
+                    width: 55%;
+                }
+
+                & .box_buttons{
+                    margin-top: 30px;
+                    width: 55%;
+                    @include flex-header(flex, space-between, false); 
+                    & .btn{
+                        @include font('Roboto', false,  #5b6470);
+                        @include button_in_section(#ffffff, false, 1px solid white); 
+                        text-transform: uppercase;
+                        padding: 20px 40px;
+                        border-radius: 5px;
+        
+                        &:hover{
+                            @include button_in_section(#061e37, white, 1px solid #061e37);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:991px){
+    header{
+        height: 900px;
+        & .header_section_laptop{
+            & .headline{
+                & video{
+                    width: 75%;
+                }
+                & .box_buttons{
+                    margin-top: 30px;
+                    width: 75%;
+                }
+            }
+        }
+        & .nav{
+            & .list{
+                display: none;
+            }
+
+            & .hamburger-menu{
+                display: block;
+                .btnHamburger{
+                    @include btn(40px, 33px);
+                    z-index: 2;
+                    .icon {
+                        @include icon(4px, 30px);
+                        &:before{
+                            @include icon-before(4px, 30px, -10px);
+                        }
+                        &:after{
+                            @include icon-after(4px, 30px, 10px);
+                        }
+                    }
+                    
+                    &.open {
+                      .icon {
+                        transition-duration: 0.5s;
+                        background: transparent;
+                        &:before{
+                            transform: rotateZ(45deg) scaleX(1.25) translate(6.5px, 6.5px);
+                        }
+                        &:after{
+                            transform: rotateZ(-45deg) scaleX(1.25) translate(6px, -6px);
+                        }
+                      }
+                    }
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+                 
+                & .box {
+                    z-index: 1;
+                    position: absolute;
+                    left:-105%;
+                    top: 0;
+                    width: 100vw;
+                    height: 100vh;
+                    background: #ffffff;
+
+                    & img{
+                        margin-top: 50px;
+                        margin-left: 50px;
+                        width: 190px;
+                        height: 30px;
+                    }
+
+                    & .menu__box{
+                        height: 350px;
+                        margin-top: 30px;
+                        list-style-type:none;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-evenly;
+                        align-items: center;
+                        & .menu__item {
+                            @include font('SemiBold', 1.2540rem,  black); 
+                            text-decoration: none;
+            
+                            &:hover{
+                                text-decoration: underline;
+                                @include hover_button(black, pointer);
+                            }
+                        }
+
+                        & .sing_up__item{
+                            display: none;
+                        }
+                    }
+                }
+
+                & .disactive {
+                    transition: left 0.8s;
+                    animation: hidenHamburger 0.8s ease forwards;
+                }
+                & .active{
+                    animation: showHamburger 0.8s ease forwards;
+                    transition: left 0.8s;
+                }
+
+                @keyframes hidenHamburger {
+                    from{
+                        left:0;
+                    }to{
+                        left:-105%;
+                    }
+                }
+                @keyframes showHamburger {
+                    from{
+                        left:-105%;
+                    }to{
+                        left:0;
+                    }
+                }
+            }
+        }
+    }
+}
+.scroll{
+    overflow-y: hidden;
+}
+
+
+@media (max-width:767px){
+    header{
+        & .nav{
+            justify-content: flex-start;
+            width: 100vw;
+            padding-bottom: 50px;
+            & img{
+                width: 180px;
+                margin-left: 6.4vw;
+            }
+            & .sing_up{
+                display: none;
+            }
+            & .hamburger-menu{
+                & .box {
+                    & .menu__box{
+                        & li:last-child{
+                            border: 1px solid transparent;
+                            border-image: linear-gradient(300deg, rgba(255,255,255,1) 0%, rgba(25,229,194,1) 0%, rgba(33,33,33,1) 0%, rgba(171,171,171,1) 0%, rgba(185,185,185,1) 0%, rgba(0,0,0,1) 0%, rgba(24,227,194,1) 0%, rgba(9,176,193,1) 100%) 10;
+                            -moz-border-image: -moz-linear-gradient(300deg, rgba(255,255,255,1) 0%, rgba(25,229,194,1) 0%, rgba(33,33,33,1) 0%, rgba(171,171,171,1) 0%, rgba(185,185,185,1) 0%, rgba(0,0,0,1) 0%, rgba(24,227,194,1) 0%, rgba(9,176,193,1) 100%) 10;
+                            -webkit-border-image: -webkit-linear-gradient(300deg, rgba(255,255,255,1) 0%, rgba(25,229,194,1) 0%, rgba(33,33,33,1) 0%, rgba(171,171,171,1) 0%, rgba(185,185,185,1) 0%, rgba(0,0,0,1) 0%, rgba(24,227,194,1) 0%, rgba(9,176,193,1) 100%) 10;
+                            border-image-slice: 1;
+                            & .sing_up__item{
+                                display: block;
+                                text-decoration:none;
+                                position: relative;
+                                @include font('Raleway', 1.0032rem, false); 
+                                background: linear-gradient(300deg, rgba(255,255,255,1) 0%, rgba(25,229,194,1) 0%, rgba(33,33,33,1) 0%, rgba(171,171,171,1) 0%, rgba(185,185,185,1) 0%, rgba(0,0,0,1) 0%, rgba(24,227,194,1) 0%, rgba(9,176,193,1) 100%);
+                                background-clip: text;
+                                -webkit-background-clip: text;
+                                -webkit-text-fill-color: transparent;
+                                font-weight: bold;
+                                padding: 2px 15px;
+                                border-radius: 3px;
+                                outline: 0;
+                                
+                            }
+
+                            & .btnAppear_active{
+                                animation: btnAppear 1s ease forwards;
+                            }
+            
+                            @keyframes btnAppear {
+                                from{
+                                    transform:translateX(0);
+                                    opacity: 1;
+                                }25%{
+                                    transform:translateX(100px);
+                                    opacity: 0;
+                                }50%{
+                                    transform:translateX(-100px);
+                                    opacity: 0;
+                                }to{
+                                    transform:translateX(0px);
+                                    opacity: 1;
+                                }
+                            }
+                        }                        
+                    }
+                }
+            }
+        }
+
+        & .header_section_laptop{    
+            & .headline{     
+                margin-left: 50px;   
+                & .hedline_text{
+                    width: 70vw;
+                    line-height: 1.5;
+                    margin-bottom: 25px;
+                }
+
+                & video{ 
+                    width: 80vw;
+                }
+
+                & .box_buttons{
+                    width: 80vw;
+                }
+            }
+        }
+    }
+}
+
+
+
+@media (max-width:575px){
+    header{
+        height: 550px;
+        & .nav{
+            justify-content: flex-start;
+            width: 100vw;
+            padding-bottom: 50px;
+            & img{
+                width: 180px;
+                margin-left: 6.4vw;
+            }
+            & .sing_up{
+                display: none;
+            }
+            & .hamburger-menu{
+                & .box {
+                    & img{
+                        margin-left: 15px;
+                        width: 180px;
+                    }
+                }
+            }
+        }
+
+        & .header_section_laptop{    
+            & .headline{     
+                margin-left: 25px;
+                & h1{
+                    margin-bottom: 10px;
+                }  
+                & .hedline_text{
+                    width: 80vw;
+                }
+
+                & video{ 
+                    display: none;
+                }
+
+                & .box_buttons{
+                    width: 80vw;
+                    height: 150px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
